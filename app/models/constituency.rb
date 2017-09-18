@@ -35,6 +35,8 @@ class Constituency < ActiveRecord::Base
 
   class << self
     def find_by_postcode(postcode)
+      return if Site.disable_constituency_api?
+
       results = query.fetch(postcode)
 
       if attributes = results.first
