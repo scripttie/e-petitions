@@ -3,16 +3,19 @@ default: &default
   encoding: utf8
   url: <%= ENV.fetch("DATABASE_URL") %>
   pool: 5
+  username: ept
+  password: managu
+  port: 5432
 
 development:
   <<: *default
-  database: epets_development
+  database: ept_development
 
 test:
   <<: *default
-  database: epets_test
+  database: ept_test
 
 production:
   <<: *default
-  database: epets_production
+  database: ept_production
   pool: <%= ENV.fetch('WEB_CONCURRENCY_MAX_THREADS') { 32 }.to_i %>
