@@ -37,6 +37,8 @@ gem 'redcarpet'
 
 gem 'aws-sdk', '~> 2.0'
 
+gem 'pickle'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'jasmine-rails'
